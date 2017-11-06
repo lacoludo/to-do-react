@@ -11,9 +11,9 @@ class ToDo extends React.Component{
     }
 
     // Filters
-    showAll(){this.setState({ status: ''})}
-    showChecked(){this.setState({ status: true})}
-    showUnchecked(){this.setState({ status: false})}
+    showAll(){this.setState({status: ''})}
+    showChecked(){this.setState({status: true})}
+    showUnchecked(){this.setState({status: false})}
 
     // Mounting
     constructor(){super().state = {myjson: [], status: ''}}
