@@ -13,17 +13,11 @@ class ToDo extends React.Component{
     // Filters
     showAll(){this.setState({ status: ''})}
     showChecked(){this.setState({ status: true})}
-    showUnChecked(){this.setState({ status: false})}
+    showUnchecked(){this.setState({ status: false})}
 
-    // Mounting part 1
-    constructor(){super()
-        this.state = {myjson: [], status: ''}
-    }
-
-    // Mounting part 2
+    // Mounting
+    constructor(){super().state = {myjson: [], status: ''}}
     componentWillMount(){this.fetchApi()}
-
-    // Mounting part 3
     render() {
         let showResults = this.state.myjson
         if (this.state.status !== '') {showResults = this.state.myjson.filter((task) => task.complete === this.state.status )}
@@ -32,7 +26,7 @@ class ToDo extends React.Component{
                 <div className='buttons-centered'>
                     <button onClick={() => this.showAll()}>Show all</button>
                     <button onClick={() => this.showChecked()}>Show checked</button>
-                    <button onClick={() => this.showUnChecked()}>Show unchecked</button>
+                    <button onClick={() => this.showUnchecked()}>Show unchecked</button>
                 </div>
                 <Tasks tasks={showResults} />
             </div>
